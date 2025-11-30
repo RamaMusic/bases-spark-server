@@ -55,7 +55,7 @@ def main():
     
     try:
         # Load and Cache Data
-        df = spark.read.csv(csv_path, header=True, inferSchema=True)
+        df = spark.read.csv(csv_path, header=False, inferSchema=True)
         # df.cache() # Disabled to save memory
         print(f"DataFrame loaded. Count: {df.count()}", flush=True)
         

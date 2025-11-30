@@ -8,7 +8,7 @@ Un entorno de ejecución ultra-rápido para PySpark que mantiene los datos en me
 Construye la imagen y espera a que Spark esté listo:
 
 ```bash
-docker-compose up --build --wait
+docker-compose up --build --wait -d
 ```
 
 ### 2. Ejecutar tu Código

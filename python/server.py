@@ -10,6 +10,7 @@ import importlib.util
 HOST = '0.0.0.0'
 PORT = 9999
 LAB_FILE_PATH = "/bases/lab.py"
+CSV_DATA_PATH = "/bases/data.csv"
 
 def load_and_run_lab(spark, sc, df, rdd):
     """Reloads lab.py and executes the run function, capturing output."""
@@ -49,8 +50,7 @@ def main():
     sc = spark.sparkContext
     sc.setLogLevel("WARN")
 
-    # csv_path = "/bases/parcial/books_ratings.csv"
-    csv_path = "/bases/parcial/data.csv"
+    csv_path = CSV_DATA_PATH
     print(f"Loading data from {csv_path}...", flush=True)
     
     try:
@@ -65,6 +65,7 @@ def main():
         
     except Exception as e:
         print(f"Error loading data: {e}", file=sys.stderr, flush=True)
+        sys.exit(1)
 
     # Start Socket Server
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:

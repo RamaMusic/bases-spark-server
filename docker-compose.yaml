@@ -6,7 +6,8 @@ services:
       platforms:
         - linux/amd64
     ports:
-      - 4040:4040
+      - "4040:4040"
+      - "9999:9999"
 
     volumes:
       - ./dataset:/bases

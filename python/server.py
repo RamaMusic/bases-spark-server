@@ -9,7 +9,7 @@ import importlib.util
 # Configuration
 HOST = '0.0.0.0'
 PORT = 9999
-LAB_FILE_PATH = "/bases/server/lab.py"
+LAB_FILE_PATH = "/bases/lab.py"
 
 def load_and_run_lab(spark, sc, df, rdd):
     """Reloads lab.py and executes the run function, capturing output."""

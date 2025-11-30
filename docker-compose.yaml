@@ -6,11 +6,11 @@ services:
       platforms:
         - linux/amd64
     ports:
-      - 4040:4040 # Interfaz web de Spark (disponible si existe un SparkContext)
+      - 4040:4040
 
     volumes:
-      - ./archivos:/bases
-      - ./files:/bases/server
+      - ./dataset:/bases
+      - ./python:/bases/server
     healthcheck:
       test: [ "CMD", "test", "-f", "/tmp/ready" ]
       interval: 5s

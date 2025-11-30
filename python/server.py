@@ -50,7 +50,7 @@ def main():
     sc.setLogLevel("WARN")
 
     # csv_path = "/bases/parcial/books_ratings.csv"
-    csv_path = "/bases/parcial/bicis.csv"
+    csv_path = "/bases/parcial/data.csv"
     print(f"Loading data from {csv_path}...", flush=True)
     
     try:

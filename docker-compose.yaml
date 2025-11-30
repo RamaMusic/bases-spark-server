@@ -1,0 +1,20 @@
+services:
+  spark:
+    build:
+      context: .
+      dockerfile: Dockerfile_Spark
+      platforms:
+        - linux/amd64
+    ports:
+      - 4040:4040 # Interfaz web de Spark (disponible si existe un SparkContext)
+
+    volumes:
+      - ./archivos:/bases
+      - ./files:/bases/server
+    healthcheck:
+      test: [ "CMD", "test", "-f", "/tmp/ready" ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    container_name: spark
